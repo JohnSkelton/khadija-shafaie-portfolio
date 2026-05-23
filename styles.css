@@ -356,8 +356,8 @@ nav a:hover::after, nav a.active::after {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  padding-top: 140px;
-  padding-bottom: 60px;
+  padding-top: 110px;
+  padding-bottom: 50px;
   overflow: hidden;
 }
 
@@ -408,17 +408,18 @@ nav a:hover::after, nav a.active::after {
 
 .hero-text-overlay {
   z-index: 10;
-  max-width: 800px;
-  margin-bottom: 3.5rem;
+  max-width: 600px;
+  margin-top: 1.5rem;
+  margin-bottom: 2.2rem;
 }
 
 .hero-subtitle {
   font-family: var(--font-mono);
   color: var(--color-accent);
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.35em;
-  margin-bottom: 1.2rem;
+  letter-spacing: 0.4em;
+  margin-bottom: 0.6rem;
   display: inline-block;
 }
 
@@ -428,13 +429,14 @@ nav a:hover::after, nav a.active::after {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  column-gap: 0.8rem;
-  row-gap: 0.2rem;
-  font-size: clamp(2.4rem, 6.8vw, 5.5rem);
-  font-weight: 800;
-  line-height: 1.05;
-  margin-bottom: 1.8rem;
-  letter-spacing: -0.02em;
+  column-gap: 0.6rem;
+  row-gap: 0.1rem;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem); /* Small and elegant museum caption */
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .hero-title span {
@@ -459,11 +461,11 @@ nav a:hover::after, nav a.active::after {
 }
 
 .hero-desc {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  max-width: 580px;
+  font-size: 0.9rem;
+  max-width: 480px;
   margin: 0 auto;
   color: var(--color-muted);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* Immersive Floating Gallery Portal Layout */
@@ -471,8 +473,8 @@ nav a:hover::after, nav a.active::after {
   position: relative;
   width: 100%;
   max-width: 950px;
-  height: 540px;
-  margin: 0 auto 3.5rem auto;
+  height: 460px;
+  margin: 1rem auto 1rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -480,8 +482,8 @@ nav a:hover::after, nav a.active::after {
 
 /* Centerpiece Masterpiece Frame */
 .centerpiece-canvas {
-  width: 380px;
-  height: 480px;
+  width: 310px;
+  height: 410px;
   background-color: var(--color-bg-white);
   border: 1px solid var(--border-light);
   padding: 1.2rem;
@@ -655,40 +657,42 @@ nav a:hover::after, nav a.active::after {
 @media (max-width: 1024px) {
   .hero-gallery-portal {
     max-width: 750px;
-    height: 480px;
+    height: 400px;
   }
   .centerpiece-canvas {
-    width: 320px;
-    height: 410px;
+    width: 270px;
+    height: 360px;
   }
   .canvas-tl {
+    width: 130px;
+    height: 180px;
+  }
+  .canvas-br {
     width: 140px;
     height: 190px;
   }
-  .canvas-br {
-    width: 150px;
-    height: 200px;
-  }
   .canvas-bl {
-    width: 130px;
-    height: 180px;
+    width: 120px;
+    height: 170px;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 110px;
+    padding-top: 100px;
   }
   .hero-text-overlay {
-    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
   .hero-gallery-portal {
-    height: 390px;
-    margin-bottom: 2.5rem;
+    height: 310px;
+    margin-bottom: 1.5rem;
   }
   .centerpiece-canvas {
-    width: 270px;
-    height: 350px;
+    width: 210px;
+    height: 290px;
+    padding: 0.8rem;
   }
   /* Hide smaller floating canvases on mobile to focus strictly on centerpiece */
   .floating-canvas {
