@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (window.matchMedia('(pointer: fine)').matches) {
     document.addEventListener('mousemove', (e) => {
-      // Smooth out cursor placement
       cursor.style.left = `${e.clientX}px`;
       cursor.style.top = `${e.clientY}px`;
       
@@ -120,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
       cursor.classList.remove('hovered');
     };
 
-    // Apply to all elements that can be clicked
     const updateCursorTargets = () => {
       const targets = document.querySelectorAll('a, button, .artwork-card, input, textarea, .cursor-target');
       targets.forEach(target => {
@@ -132,16 +130,87 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     updateCursorTargets();
     
-    // Watch for dynamic updates
     const observer = new MutationObserver(updateCursorTargets);
     observer.observe(document.body, { childList: true, subtree: true });
   } else {
-    // Hide cursors on touchscreen
     if (cursor) cursor.style.display = 'none';
     if (cursorDot) cursorDot.style.display = 'none';
   }
 
-  // --- 3. Dynamic Header Scrolling Logic ---
+  // --- 3. ReactBits SplitText / BlurText Entrance Animation ---
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) {
+    const childSpans = heroTitle.querySelectorAll('span');
+    let globalCharIndex = 0;
+    
+    childSpans.forEach(span => {
+      const text = span.textContent;
+      span.innerHTML = '';
+      const chars = text.split('');
+      
+      chars.forEach(char => {
+        const charSpan = document.createElement('span');
+        charSpan.className = 'char-span';
+        // Preserve space characters
+        charSpan.textContent = char === ' ' ? '\u00A0' : char;
+        // Elastic stagger delays
+        charSpan.style.animationDelay = `${globalCharIndex * 0.035}s`;
+        span.appendChild(charSpan);
+        globalCharIndex++;
+      });
+    });
+  }
+
+  // --- 4. ReactBits Magnetic Attractions (Buttons & Logo & Nav) ---
+  const magnetElements = document.querySelectorAll('.btn, nav a, .logo, .social-link');
+  if (window.matchMedia('(pointer: fine)').matches) {
+    magnetElements.forEach(elem => {
+      elem.addEventListener('mousemove', (e) => {
+        const rect = elem.getBoundingClientRect();
+        // Offset of cursor relative to element center
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        // Attract element 35% towards mouse
+        elem.style.transform = `translate(${x * 0.35}px, ${y * 0.35}px)`;
+        elem.style.transition = 'none';
+      });
+      
+      elem.addEventListener('mouseleave', () => {
+        elem.style.transform = 'translate(0px, 0px)';
+        elem.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      });
+    });
+  }
+
+  // --- 5. ReactBits Spotlight Card 3D Parallax Tilt ---
+  const artworkCards = document.querySelectorAll('.artwork-card');
+  artworkCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; 
+      const y = e.clientY - rect.top;  
+      
+      card.style.setProperty('--x', `${x}px`);
+      card.style.setProperty('--y', `${y}px`);
+      
+      // Calculate rotation angles based on cursor offset from card center
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = -(y - centerY) / 12; // Moderate tilt
+      const rotateY = (x - centerX) / 12;
+      
+      card.style.setProperty('--rotate-x', `${rotateX}deg`);
+      card.style.setProperty('--rotate-y', `${rotateY}deg`);
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--rotate-x', '0deg');
+      card.style.setProperty('--rotate-y', '0deg');
+    });
+  });
+
+  // --- 6. Dynamic Header Scrolling Logic ---
   const header = document.getElementById('main-header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -151,43 +220,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 4. Mobile Menu Navigation Navigation Toggle ---
+  // --- 7. Mobile Menu Slide-Out Drawer Toggle ---
   const menuToggle = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
   
-  if (menuToggle) {
+  if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       menuToggle.classList.toggle('open');
       
-      // Animate hamburger to X
       const spans = menuToggle.querySelectorAll('span');
       if (menuToggle.classList.contains('open')) {
-        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+        spans[0].style.transform = 'translateY(8px) rotate(45deg)';
         spans[1].style.opacity = '0';
-        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-        navMenu.style.display = 'flex';
-        navMenu.style.position = 'fixed';
-        navMenu.style.top = '0';
-        navMenu.style.left = '0';
-        navMenu.style.width = '100vw';
-        navMenu.style.height = '100vh';
-        navMenu.style.backgroundColor = 'rgba(7,7,8,0.98)';
-        navMenu.style.alignItems = 'center';
-        navMenu.style.justifyContent = 'center';
-        navMenu.style.zIndex = '1000';
-        navMenu.querySelector('ul').style.flexDirection = 'column';
-        navMenu.querySelector('ul').style.alignItems = 'center';
+        spans[2].style.transform = 'translateY(-8px) rotate(-45deg)';
       } else {
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
-        navMenu.removeAttribute('style');
-        navMenu.querySelector('ul').removeAttribute('style');
       }
     });
 
-    // Close mobile nav on link click
+    // Close mobile nav drawer on link click
     const navLinks = navMenu.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -197,13 +251,11 @@ document.addEventListener('DOMContentLoaded', () => {
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
-        navMenu.removeAttribute('style');
-        navMenu.querySelector('ul').removeAttribute('style');
       });
     });
   }
 
-  // --- 5. Interactive Portfolio Filtering ---
+  // --- 8. Interactive Portfolio Filtering ---
   const filterButtons = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -222,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
           setTimeout(() => {
             item.style.opacity = '1';
             item.style.transform = 'translateY(0) scale(1)';
-          }, 50 * index); // Beautiful Staggered reveal
+          }, 40 * index); // Beautiful dynamic stagger reveal
         } else {
           item.style.opacity = '0';
           item.style.transform = 'translateY(20px) scale(0.95)';
@@ -234,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 6. Highly Premium Lightbox Modal Implementation ---
+  // --- 9. Premium Lightbox Modal Implementation ---
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxTitle = document.getElementById('lightbox-title');
@@ -249,16 +301,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxNext = document.getElementById('lightbox-next');
   const lightboxBack = document.getElementById('lightbox-back');
   const lightboxInquire = document.getElementById('lightbox-inquire');
-  const artworkCards = document.querySelectorAll('.artwork-card');
 
   const updateLightboxContent = (index) => {
     currentActiveIndex = index;
     const art = ARTWORKS_DATABASE[index];
     
-    // Zoom Reset
+    // Zoom reset
     lightboxImg.classList.remove('zoomed');
     
-    // Fade out image, swap, then fade in
+    // Fade reveal animation
     lightboxImg.style.opacity = '0';
     lightboxImg.style.transform = 'scale(0.97)';
     
@@ -280,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const openLightbox = (index) => {
     updateLightboxContent(index);
     lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Stop background scrolling
+    document.body.style.overflow = 'hidden'; 
   };
 
   const closeLightbox = () => {
@@ -300,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLightboxContent(prevIndex);
   };
 
-  // Wire Card Clicks
+  // Wire Card click events
   artworkCards.forEach(card => {
     card.addEventListener('click', () => {
       const idx = parseInt(card.getAttribute('data-index'));
@@ -308,19 +359,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Hero section showcase frame click
+  // Hero section showcase click handler
   const heroShowcase = document.getElementById('hero-showcase-frame');
   if (heroShowcase) {
     heroShowcase.addEventListener('click', () => {
-      openLightbox(0); // Opens Ethereal Echoes
+      openLightbox(0); 
     });
   }
 
-  // Lightbox Close triggers
+  // Close triggers
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
   if (lightboxBack) lightboxBack.addEventListener('click', closeLightbox);
   
-  // Viewer backdrop click (closes lightbox only if clicking outside the image)
   if (lightbox) {
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox || e.target.classList.contains('lightbox-viewer')) {
@@ -329,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Navigation
+  // Navigation arrows
   if (lightboxNext) lightboxNext.addEventListener('click', nextArtwork);
   if (lightboxPrev) lightboxPrev.addEventListener('click', prevArtwork);
 
@@ -342,14 +392,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowLeft') prevArtwork();
   });
 
-  // Dynamic Lightbox Zoom Details
+  // Lightbox Zoom detail trigger
   if (lightboxImg) {
     lightboxImg.addEventListener('click', () => {
       lightboxImg.classList.toggle('zoomed');
     });
   }
 
-  // Lightbox inquire link - dynamic routing to contact form
+  // Acquisition inquiry routing
   if (lightboxInquire) {
     lightboxInquire.addEventListener('click', () => {
       const currentArt = ARTWORKS_DATABASE[currentActiveIndex];
@@ -358,7 +408,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (subjectInput) {
         subjectInput.value = `Artwork Acquisition: "${currentArt.title}"`;
-        // Trigger float label update
         subjectInput.dispatchEvent(new Event('input'));
       }
       
@@ -369,7 +418,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       closeLightbox();
       
-      // Smooth scroll down to contact section
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -377,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 7. Interactive Toast Notification Utility ---
+  // --- 10. Interactive Toast Notification Utility ---
   const showToast = (message, isSuccess = true) => {
     const toastContainer = document.getElementById('toast-container');
     const toast = document.createElement('div');
@@ -388,7 +436,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     toastContainer.appendChild(toast);
     
-    // Auto remove toast
     setTimeout(() => {
       toast.classList.add('hiding');
       setTimeout(() => {
@@ -397,18 +444,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   };
 
-  // --- 8. Contact Form Submissions Handling ---
+  // --- 11. Contact Form Submissions Handling ---
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
       const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      
-      // Simulate highly secure contemporary API call
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       submitBtn.textContent = 'TRANSMITTING...';
@@ -418,7 +460,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast(`Message from ${name} transmitted successfully to Khadija's studio.`);
         contactForm.reset();
         
-        // Reset label positions
         const inputs = contactForm.querySelectorAll('.form-input');
         inputs.forEach(input => {
           input.dispatchEvent(new Event('input'));
@@ -430,7 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 9. Dynamic Timing & Copyright Initialization ---
+  // --- 12. Dynamic Timing & Copyright Initialization ---
   const yearSpan = document.getElementById('current-year');
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
@@ -443,10 +484,10 @@ document.addEventListener('DOMContentLoaded', () => {
       timeDiv.textContent = now.toISOString().split('.')[0].replace('T', ' / ');
     };
     updateTime();
-    setInterval(updateTime, 1000); // Live Studio Clock
+    setInterval(updateTime, 1000); 
   }
 
-  // Smooth Section active state nav updates
+  // Smooth Scroll dynamic active navigation highlights
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('nav a');
   
@@ -454,8 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let current = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= (sectionTop - 200)) {
+      if (window.scrollY >= (sectionTop - 240)) {
         current = section.getAttribute('id');
       }
     });
