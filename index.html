@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khadija Shafaie | Contemporary Fine Art & Portfolio</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore the contemporary fine art and portfolio of Khadija Shafaie. Discover vibrant modern oil paintings, dynamic mixed media, structured charcoal drawings, and celestial digital abstractions.">
+  <meta name="keywords" content="Khadija Shafaie, Fine Art, Contemporary Artist, Modern Painting, Abstract Art, Oil Painting, Mixed Media Art, Art Gallery, Exhibition, Portfolio">
+  <meta name="author" content="Khadija Shafaie">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://khadijashafaie.vercel.app/">
+  <meta property="og:title" content="Khadija Shafaie | Contemporary Fine Art & Portfolio">
+  <meta property="og:description" content="Explore the contemporary fine art and portfolio of Khadija Shafaie. Discover vibrant modern oil paintings, dynamic mixed media, structured charcoal drawings, and celestial digital abstractions.">
+  <meta property="og:image" content="701829111_2099772177555102_3731586498534513463_n.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://khadijashafaie.vercel.app/">
+  <meta property="twitter:title" content="Khadija Shafaie | Contemporary Fine Art & Portfolio">
+  <meta property="twitter:description" content="Explore the contemporary fine art and portfolio of Khadija Shafaie. Discover vibrant modern oil paintings, dynamic mixed media, structured charcoal drawings, and celestial digital abstractions.">
+  <meta property="twitter:image" content="701829111_2099772177555102_3731586498534513463_n.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23070708'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23c5a880'/%3E%3C/svg%3E">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Magnetic Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+  <!-- Noise Overlay for Gallery Texture -->
+  <div class="noise-overlay"></div>
+
+  <!-- Header & Navigation -->
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="#home" class="logo cursor-target">
+        KHADIJA<span class="logo-accent">SHAFAIE</span>
+      </a>
+      
+      <button class="menu-toggle cursor-target" id="menu-toggle" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#home" class="nav-link active cursor-target">Home</a></li>
+          <li><a href="#gallery" class="nav-link cursor-target">Works</a></li>
+          <li><a href="#about" class="nav-link cursor-target">About</a></li>
+          <li><a href="#exhibitions" class="nav-link cursor-target">Exhibitions</a></li>
+          <li><a href="#contact" class="nav-link cursor-target">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="geo-element geo-1"></div>
+    <div class="geo-element geo-2"></div>
+    
+    <div class="container hero-wrapper">
+      <div class="hero-content">
+        <span class="hero-subtitle">Visual Artist</span>
+        <h1 class="hero-title">
+          <span>CREATING</span>
+          <span class="serif-italic">silent</span>
+          <span>RESONANCE.</span>
+        </h1>
+        <p class="hero-desc">
+          An exploration of layered mediums, architectural contrast, and natural flow structures, creating high-contrast contemporary fine art.
+        </p>
+        <div class="hero-buttons">
+          <a href="#gallery" class="btn btn-primary cursor-target">View Portfolio</a>
+          <a href="#contact" class="btn btn-secondary cursor-target">Commission Inquiry</a>
+        </div>
+      </div>
+      
+      <div class="hero-art-showcase">
+        <div class="showcase-frame cursor-target" id="hero-showcase-frame">
+          <div class="showcase-image-wrapper">
+            <img 
+              src="701829111_2099772177555102_3731586498534513463_n.jpg" 
+              alt="Ethereal Echoes by Khadija Shafaie" 
+              class="showcase-image"
+              loading="eager"
+            >
+          </div>
+          <div class="showcase-label">
+            <div class="showcase-label-title">Ethereal Echoes</div>
+            <div class="showcase-label-medium">Oil & Mixed Media</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span>Scroll to Explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-num">01 / WORKS</span>
+          <h2 class="section-title">THE GALLERY</h2>
+        </div>
+        <div class="section-subtitle-aside">
+          A curated collection of recent abstractions, textures, and contemporary forms.
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="portfolio-filters">
+        <button class="filter-btn active cursor-target" data-filter="all">All Works</button>
+        <button class="filter-btn cursor-target" data-filter="oil">Oil on Canvas</button>
+        <button class="filter-btn cursor-target" data-filter="mixed">Mixed Media</button>
+        <button class="filter-btn cursor-target" data-filter="monochrome">Charcoal & Ink</button>
+        <button class="filter-btn cursor-target" data-filter="digital">Digital Abstract</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="gallery-grid" id="gallery-grid">
+        
+        <!-- Artwork Item 1 -->
+        <div class="gallery-item" data-category="oil mixed">
+          <div class="artwork-card cursor-target" data-index="0" data-img="701829111_2099772177555102_3731586498534513463_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="701829111_2099772177555102_3731586498534513463_n.jpg" alt="Ethereal Echoes" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Ethereal Echoes</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Oil & Mixed Media</span>
+                <span class="artwork-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 2 -->
+        <div class="gallery-item" data-category="oil">
+          <div class="artwork-card cursor-target" data-index="1" data-img="702271909_989204240136049_4333181375427494616_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="702271909_989204240136049_4333181375427494616_n.jpg" alt="Whispers in Obsidian" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Whispers in Obsidian</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Oil on Canvas</span>
+                <span class="artwork-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 3 -->
+        <div class="gallery-item" data-category="mixed monochrome">
+          <div class="artwork-card cursor-target" data-index="2" data-img="702359888_1531232461987448_1344308428849471727_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="702359888_1531232461987448_1344308428849471727_n.jpg" alt="Transient Moments" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Transient Moments</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Acrylic & Charcoal</span>
+                <span class="artwork-year">2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 4 -->
+        <div class="gallery-item" data-category="monochrome">
+          <div class="artwork-card cursor-target" data-index="3" data-img="702945760_1285651840381556_4381733400227208815_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="702945760_1285651840381556_4381733400227208815_n.jpg" alt="Silent Resonance" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Silent Resonance</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Charcoal on Paper</span>
+                <span class="artwork-year">2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 5 -->
+        <div class="gallery-item" data-category="mixed">
+          <div class="artwork-card cursor-target" data-index="4" data-img="703110410_1699284747974826_1129497323829790875_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="703110410_1699284747974826_1129497323829790875_n.jpg" alt="Fractured Reflection" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Fractured Reflection</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Mixed Media Panel</span>
+                <span class="artwork-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 6 -->
+        <div class="gallery-item" data-category="oil mixed">
+          <div class="artwork-card cursor-target" data-index="5" data-img="704072314_2054255565162663_1874421751968236481_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="704072314_2054255565162663_1874421751968236481_n.jpg" alt="Astral Conjunction" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Astral Conjunction</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Oil & Gold Leaf</span>
+                <span class="artwork-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 7 -->
+        <div class="gallery-item" data-category="digital">
+          <div class="artwork-card cursor-target" data-index="6" data-img="704306458_956698647261784_7593195142266578493_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="704306458_956698647261784_7593195142266578493_n.jpg" alt="Luminous Depths" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Luminous Depths</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Digital Abstraction</span>
+                <span class="artwork-year">2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 8 -->
+        <div class="gallery-item" data-category="monochrome">
+          <div class="artwork-card cursor-target" data-index="7" data-img="704725731_1757721701911110_682278848542453462_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="704725731_1757721701911110_682278848542453462_n.jpg" alt="Symphony of Shadows" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Symphony of Shadows</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Charcoal & Ink</span>
+                <span class="artwork-year">2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 9 -->
+        <div class="gallery-item" data-category="oil">
+          <div class="artwork-card cursor-target" data-index="8" data-img="704867605_2209141963173485_1607472156139481387_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="704867605_2209141963173485_1607472156139481387_n.jpg" alt="Chroma Genesis" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Chroma Genesis</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Oil on Canvas</span>
+                <span class="artwork-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 10 -->
+        <div class="gallery-item" data-category="mixed">
+          <div class="artwork-card cursor-target" data-index="9" data-img="705211886_1113962978467756_1557480987856235636_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="705211886_1113962978467756_1557480987856235636_n.jpg" alt="Nebula Drift" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Nebula Drift</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Mixed Media Panel</span>
+                <span class="artwork-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork Item 11 -->
+        <div class="gallery-item" data-category="oil">
+          <div class="artwork-card cursor-target" data-index="10" data-img="706970926_972991398953910_660439918019223296_n.jpg">
+            <div class="artwork-img-wrapper">
+              <img src="706970926_972991398953910_660439918019223296_n.jpg" alt="Liminal Gateway" class="artwork-img" loading="lazy">
+            </div>
+            <div class="artwork-info">
+              <h3 class="artwork-title">Liminal Gateway</h3>
+              <div class="artwork-meta">
+                <span class="artwork-medium">Oil & Enamel</span>
+                <span class="artwork-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-num">02 / BIOGRAPHY</span>
+          <h2 class="section-title">THE ARTIST</h2>
+        </div>
+        <div class="section-subtitle-aside">
+          A convergence of traditional craftsmanship and progressive abstraction.
+        </div>
+      </div>
+
+      <div class="about-wrapper">
+        <div class="about-image-column">
+          <div class="about-image-frame cursor-target">
+            <div class="about-img-wrapper">
+              <img src="704867605_2209141963173485_1607472156139481387_n.jpg" alt="Khadija Shafaie Portrait Work Detail" class="about-img">
+            </div>
+            <div class="about-badge">
+              * KHADIJA SHAFAIE * FINE ARTIST
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text-column">
+          <h3 class="about-editorial-title">
+            "Art is not a reflection of reality, but a dialogue with the unseen structures that form it."
+          </h3>
+          <p class="about-bio">
+            Khadija Shafaie is a contemporary fine artist whose work explores the boundaries of medium density, structural geometry, and ambient tonal contrasts. Based in her private studio, she constructs multilayered panels that combine classic oil techniques with industrial minerals, fluid ink processes, and modern digital reflections.
+          </p>
+          <p class="about-details">
+            Deeply inspired by Brutalist architecture, organic decay, and stellar topography, Khadija focuses on building intense tactile experiences. Her paint applications range from heavy impasto to fluid, transparent glazes, creating depth that shifts dynamically with the ambient light of the viewing space.
+          </p>
+          
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num">12+</span>
+              <span class="stat-label">Solo Exhibitions</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">45+</span>
+              <span class="stat-label">Curated Masterpieces</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">150+</span>
+              <span class="stat-label">Collector Placements</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exhibitions Section -->
+  <section id="exhibitions">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-num">03 / SHOWCASES</span>
+          <h2 class="section-title">EXHIBITIONS</h2>
+        </div>
+        <div class="section-subtitle-aside">
+          A history of public conversations and international curation.
+        </div>
+      </div>
+
+      <div class="exhibition-timeline">
+        
+        <!-- Exhibition 1 -->
+        <div class="exhibition-row cursor-target">
+          <div class="exhib-date">2026 / FORTHCOMING</div>
+          <div class="exhib-title">Ethereal Constructs</div>
+          <div class="exhib-venue">Musée d'Art Moderne, Paris</div>
+          <div class="exhib-type">SOLO SHOW</div>
+        </div>
+
+        <!-- Exhibition 2 -->
+        <div class="exhibition-row cursor-target">
+          <div class="exhib-date">2025 / ACTIVE</div>
+          <div class="exhib-title">Symphony of Shadows</div>
+          <div class="exhib-venue">Tate Contemporary, London</div>
+          <div class="exhib-type">SOLO EXPOSITION</div>
+        </div>
+
+        <!-- Exhibition 3 -->
+        <div class="exhibition-row cursor-target">
+          <div class="exhib-date">2025</div>
+          <div class="exhib-title">Liminal Thresholds</div>
+          <div class="exhib-venue">The National Art Center, Tokyo</div>
+          <div class="exhib-type">GROUP CURATION</div>
+        </div>
+
+        <!-- Exhibition 4 -->
+        <div class="exhibition-row cursor-target">
+          <div class="exhib-date">2024</div>
+          <div class="exhib-title">Nebulous Forms</div>
+          <div class="exhib-venue">Modern Art Gallery, New York</div>
+          <div class="exhib-type">DUO CURATION</div>
+        </div>
+
+        <!-- Exhibition 5 -->
+        <div class="exhibition-row cursor-target">
+          <div class="exhib-date">2023</div>
+          <div class="exhib-title">Textural Origin</div>
+          <div class="exhib-venue">Metropolitan Gallery, Berlin</div>
+          <div class="exhib-type">SOLO SHOW</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-num">04 / INQUIRIES</span>
+          <h2 class="section-title">ACQUISITIONS</h2>
+        </div>
+        <div class="section-subtitle-aside">
+          Commission requests, piece acquisitions, or studio visits.
+        </div>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-info-column">
+          <div>
+            <h3 class="contact-message-header">
+              Let's curate a visual dialogue for your contemporary space.
+            </h3>
+            
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <span class="method-label">GENERAL INQUIRIES</span>
+                <span class="method-value cursor-target">
+                  <a href="mailto:studio@khadijashafaie.com">studio@khadijashafaie.com</a>
+                </span>
+              </div>
+              <div class="contact-method-item">
+                <span class="method-label">REPRESENTATION</span>
+                <span class="method-value">Gagosian & Tate Fine Art</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link cursor-target">INSTAGRAM</a>
+            <a href="https://artsy.net" target="_blank" rel="noopener noreferrer" class="social-link cursor-target">ARTSY</a>
+            <a href="https://saatchiart.com" target="_blank" rel="noopener noreferrer" class="social-link cursor-target">SAATCHI</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link cursor-target">LINKEDIN</a>
+          </div>
+        </div>
+
+        <div class="contact-form-column">
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" class="form-input cursor-target" placeholder=" " required>
+              <label for="name" class="form-label">Your Name</label>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" id="email" class="form-input cursor-target" placeholder=" " required>
+              <label for="email" class="form-label">Email Address</label>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="subject" class="form-input cursor-target" placeholder=" ">
+              <label for="subject" class="form-label">Subject / Artwork Interest</label>
+            </div>
+
+            <div class="form-group">
+              <textarea id="message" class="form-input cursor-target" placeholder=" " required></textarea>
+              <label for="message" class="form-label">Message Details</label>
+            </div>
+
+            <div class="form-submit-wrapper">
+              <button type="submit" class="btn btn-primary cursor-target">Send Inquiry</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-copyright">
+        &copy; <span id="current-year">2026</span> KHADIJA SHAFAIE. ALL RIGHTS RESERVED.
+      </div>
+      <div class="footer-logo">
+        KHADIJA<span class="logo-accent">SHAFAIE</span>
+      </div>
+      <div class="footer-timestamp" id="footer-time">
+        2026-05-23T19:15:42
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close-btn cursor-target" id="lightbox-close" aria-label="Close Lightbox"></button>
+    <button class="lightbox-nav-btn lightbox-nav-prev cursor-target" id="lightbox-prev" aria-label="Previous Artwork">&larr;</button>
+    <button class="lightbox-nav-btn lightbox-nav-next cursor-target" id="lightbox-next" aria-label="Next Artwork">&rarr;</button>
+    
+    <div class="lightbox-viewer">
+      <div class="lightbox-img-wrapper">
+        <img src="" alt="Full-sized Artwork" class="lightbox-img" id="lightbox-img">
+      </div>
+    </div>
+    
+    <div class="lightbox-sidebar">
+      <div class="lightbox-details">
+        <span class="lightbox-num" id="lightbox-num">01 / 11</span>
+        <h3 class="lightbox-title" id="lightbox-title">Artwork Title</h3>
+        <p class="lightbox-desc" id="lightbox-desc">
+          An expressive piece emphasizing the balance between natural structures and deliberate spatial strokes.
+        </p>
+        
+        <div class="lightbox-specs-list">
+          <div class="lightbox-spec-row">
+            <span class="lightbox-spec-label">MEDIUM</span>
+            <span class="lightbox-spec-val" id="lightbox-medium">Oil on Canvas</span>
+          </div>
+          <div class="lightbox-spec-row">
+            <span class="lightbox-spec-label">DIMENSIONS</span>
+            <span class="lightbox-spec-val" id="lightbox-dimensions">120 x 150 cm</span>
+          </div>
+          <div class="lightbox-spec-row">
+            <span class="lightbox-spec-label">YEAR</span>
+            <span class="lightbox-spec-val" id="lightbox-year">2025</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lightbox-sidebar-footer">
+        <div class="lightbox-cta">
+          <button class="lightbox-btn lightbox-btn-inquire cursor-target" id="lightbox-inquire">INQUIRE ABOUT PIECE</button>
+          <button class="lightbox-btn lightbox-btn-back cursor-target" id="lightbox-back">BACK TO GALLERY</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Model/Agent files
+.gemini/
+.openclaw/
+*.log
+
+# Development
+node_modules/
+dist/
+build/
+.vercel
+
+.vercel
