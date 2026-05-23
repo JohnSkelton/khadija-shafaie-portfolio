@@ -367,6 +367,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Floating canvases click handler
+  const floatingCanvases = document.querySelectorAll('.floating-canvas');
+  floatingCanvases.forEach(canvas => {
+    canvas.addEventListener('click', () => {
+      const idx = parseInt(canvas.getAttribute('data-index'));
+      openLightbox(idx);
+    });
+  });
+
   // Close triggers
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
   if (lightboxBack) lightboxBack.addEventListener('click', closeLightbox);
